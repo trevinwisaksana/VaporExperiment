@@ -20,8 +20,10 @@ drop.post("test") { req in
     guard let input_json = req.json else {
         throw Abort.badRequest
     }
+    
+    let dictionary = ["messages" : "Hello Trevin"]
 
-    return "Hello Trevin"
+    return try JSON(node: dictionary)
 }
 
 
