@@ -1,4 +1,5 @@
 import Vapor
+import BSON
 
 let drop = Droplet()
 
@@ -8,6 +9,22 @@ let drop = Droplet()
 drop.get("hello") { req in
     return "Hello, World!"
 }
+
+
+// This is for testing purposes
+var listOfData: [JSON] = []
+
+// MARK: - Testing
+drop.post("test") { req in
+    
+    guard let input_json = req.json else {
+        throw Abort.badRequest
+    }
+
+    return "Hello Trevin"
+}
+
+
 
 // MARK: - Challenge 2
 /*
@@ -21,7 +38,7 @@ var listOfJSON: [JSON] = []
 
 
 // Post request.
-drop.post("/reminders") { req in
+drop.post("reminders") { req in
     
     // Asking for three parameters, else throw a bad request.
     /*    guard let name = req.json?["name"], let age = req.json?["age"], let species = req.json?["species"] else {
