@@ -5,7 +5,7 @@ let drop = Droplet()
 
 // MARK: - Challenge 1
 // This is a example of a GET request on Vapor to say "Hello, World!".
-drop.get("") { req in
+drop.get("hello") { req in
     return "Hello, World!"
 }
 
@@ -21,7 +21,7 @@ var listOfJSON: [JSON] = []
 
 
 // Post request.
-drop.post("https://experimentcharlie.herokuapp.com") { req in
+drop.post("/reminders") { req in
     
     // Asking for three parameters, else throw a bad request.
     /*    guard let name = req.json?["name"], let age = req.json?["age"], let species = req.json?["species"] else {
