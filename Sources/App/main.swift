@@ -15,16 +15,30 @@ drop.get("hello") { req in
 var listOfData: [JSON] = []
 
 // MARK: - Testing
+// Making a POST request to create the JSON data.
 drop.post("test") { req in
     
     guard let input_json = req.json else {
         throw Abort.badRequest
     }
     
-    let dictionary = ["messages" : "Hello Trevin"]
+    let dictionary = ["todo" : "Finish API Design challenge"]
 
     return try JSON(node: dictionary)
 }
+
+// Making GET request to retrieve the JSON data.
+drop.get("test") { req in
+    
+    guard let input_json = req.json else {
+        throw Abort.badRequest
+    }
+    
+    let dictionary = ["todo" : "Finish API Design challenge"]
+    
+    return try JSON(node: dictionary)
+}
+
 
 
 
