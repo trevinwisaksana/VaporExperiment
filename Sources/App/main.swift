@@ -5,7 +5,7 @@ let drop = Droplet()
 
 // MARK: - Challenge 1
 // This is a example of a GET request on Vapor to say "Hello, World!".
-drop.get("") { req in
+drop.get("/") { req in
     return "Hello, World!"
 }
 
