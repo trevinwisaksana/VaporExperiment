@@ -21,7 +21,7 @@ var listOfJSON: [JSON] = []
 
 
 // Post request.
-drop.post("pets") { req in
+drop.post("https://experimentcharlie.herokuapp.com") { req in
     
     // Asking for three parameters, else throw a bad request.
     /*    guard let name = req.json?["name"], let age = req.json?["age"], let species = req.json?["species"] else {
