@@ -11,9 +11,6 @@ drop.get("hello") { req in
 }
 
 
-// This is for testing purposes
-var listOfData: [JSON] = []
-
 // MARK: - Testing
 // Making a POST request to create the JSON data.
 drop.post("test") { req in
