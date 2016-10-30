@@ -25,15 +25,13 @@ drop.post("test") { req in
 }
 
 // Making GET request to retrieve the JSON data.
-drop.get("test") { req in
+drop.get("testing") { req in
     
     guard let input_json = req.json else {
         throw Abort.badRequest
     }
     
-    let dictionary = ["todo" : "Finish API Design challenge"]
-    
-    return try JSON(node: dictionary)
+    return try JSON(node: input_json)
 }
 
 
