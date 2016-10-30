@@ -6,14 +6,14 @@ let drop = Droplet()
 
 // MARK: - Challenge 1
 // This is a example of a GET request on Vapor to say "Hello, World!".
-drop.get("hello") { req in
-    return "Hello, World!"
+drop.get("") { req in
+    return "Hello, Trevin! Your code is working just fine. Go ahead and finish the challenges!"
 }
 
 
 // MARK: - Testing
 // Making a POST request to create the JSON data.
-drop.post("test") { req in
+/* drop.post("test") { req in
     
     guard let input_json = req.json else {
         throw Abort.badRequest
@@ -22,7 +22,7 @@ drop.post("test") { req in
     let dictionary = ["todo" : "Finish API Design challenge"]
 
     return try JSON(node: dictionary)
-}
+} */
 
 // Making GET request to retrieve the JSON data.
 drop.get("test") { req in
