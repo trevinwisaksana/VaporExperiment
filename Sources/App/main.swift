@@ -25,7 +25,7 @@ drop.post("test") { req in
 }
 
 // Making GET request to retrieve the JSON data.
-drop.get("testing") { req in
+drop.get("test") { req in
     
     guard let input_json = req.json else {
         throw Abort.badRequest
