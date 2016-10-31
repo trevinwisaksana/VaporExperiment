@@ -3,9 +3,8 @@ import BSON
 
 let drop = Droplet()
 
-
 // MARK: - Challenge 1
-// This is a example of a GET request on Vapor to say "Hello, World!".
+// This is a example of a GET request on Vapor to say "Hello, Trevin!".
 drop.get("") { req in
     return "Hello, Trevin! Your code is working just fine. Go ahead and finish the challenges!"
 }
@@ -13,16 +12,14 @@ drop.get("") { req in
 
 // MARK: - Testing
 // Making a POST request to create the JSON data.
-/* drop.post("test") { req in
+drop.post("test") { req in
     
     guard let input_json = req.json else {
         throw Abort.badRequest
     }
-    
-    let dictionary = ["todo" : "Finish API Design challenge"]
 
-    return try JSON(node: dictionary)
-} */
+    return try JSON(node: input_json)
+}
 
 // Making GET request to retrieve the JSON data.
 drop.get("test") { req in
