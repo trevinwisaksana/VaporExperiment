@@ -11,21 +11,19 @@ drop.get("") { req in
 
 
 // MARK: - Testing
-
 var listOfTasks: [JSON] = []
 // Making a POST request to create the JSON data.
 drop.post("test") { req in
-    
     guard let input_json = req.json else {
         throw Abort.badRequest
     }
-
     listOfTasks.append(input_json)
     return try JSON(node: input_json)
 }
 
 // Making GET request to retrieve the JSON data.
 drop.get("test") { req in
+    print(listOfTasks)
     return try JSON(node: listOfTasks)
 }
 
