@@ -1,5 +1,4 @@
 import Vapor
-import BSON
 
 let drop = Droplet()
 
